@@ -44,6 +44,9 @@ jobs:
         run: |
           echo "include:geolocation-!cn@cn" >> ./domain-list-community/data/cn
           echo "include:geolocation-cn@!cn" >> ./domain-list-community/data/geolocation-\!cn
+          ls -l ./domain-list-community/data/alibaba-ads
+          sed -i '/alicdn/d' ./domain-list-community/data/alibaba-ads
+          ls -l ./domain-list-community/data/alibaba-ads
 
       - name: Get dependencies and run
         if: ${{ env.NeedToSync }}
